@@ -33,11 +33,11 @@ const SchoolHeader = () => {
     const { lang, toggleLang } = useLanguage();
     
     return (
-        <div className="w-full flex flex-col items-center justify-center pt-8 pb-4 px-4 z-20 relative animate-fade-in">
+        <div className="w-full flex flex-col items-center justify-center pt-4 pb-0 px-4 z-20 relative animate-fade-in">
             {/* Language Toggle - Absolute Top Right (Left in RTL) */}
             <button 
                 onClick={toggleLang}
-                className="absolute top-6 right-6 md:right-10 flex items-center gap-2 bg-white/80 backdrop-blur-md px-3 py-2 rounded-full shadow-sm border border-primary/20 text-primary-dark hover:bg-white transition-all hover:shadow-md z-50 text-sm font-bold"
+                className="absolute top-4 right-4 md:right-10 flex items-center gap-2 bg-white/80 backdrop-blur-md px-3 py-2 rounded-full shadow-sm border border-primary-dark/30 text-primary-dark hover:bg-white transition-all hover:shadow-md z-50 text-sm font-bold"
             >
                 <Globe size={16} />
                 <span>{lang === 'ar' ? 'English' : 'عربي'}</span>
@@ -46,13 +46,13 @@ const SchoolHeader = () => {
             <img 
                 src="https://i.ibb.co/bgFrgXkW/meis.png" 
                 alt="Middle East International School Logo" 
-                className="h-24 w-auto mb-4 drop-shadow-sm hover:scale-105 transition-transform duration-300"
+                className="h-20 w-auto mb-2 drop-shadow-sm hover:scale-105 transition-transform duration-300"
             />
-            <div className="text-center space-y-1">
-                <h1 className="text-xl md:text-2xl font-bold text-primary-dark font-arabic">
+            <div className="text-center space-y-0">
+                <h1 className="text-lg md:text-xl font-bold text-primary-dark font-arabic">
                     {translations[lang].schoolNameAr}
                 </h1>
-                <h2 className="text-sm md:text-base font-semibold text-text-muted font-sans tracking-wide">
+                <h2 className="text-xs md:text-sm font-semibold text-text-muted font-sans tracking-wide">
                     {translations[lang].schoolNameEn}
                 </h2>
             </div>
@@ -66,7 +66,7 @@ const ConfirmModal = ({ user, onConfirm, onCancel }: { user: User, onConfirm: ()
     
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary-dark/20 backdrop-blur-sm animate-fade-in" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-            <GlassCard className="max-w-md w-full p-8 text-center border-primary/20 animate-scale-in bg-white shadow-2xl">
+            <GlassCard className="max-w-md w-full p-8 text-center border-primary-dark/30 animate-scale-in bg-white shadow-2xl">
                 <h3 className="text-2xl font-bold text-primary-dark mb-6">{t('confirmTitle')}</h3>
                 
                 <div className="w-20 h-20 mx-auto bg-secondary/50 rounded-full flex items-center justify-center mb-4 text-primary text-4xl shadow-inner">
@@ -160,8 +160,17 @@ const AppContent: React.FC = () => {
       {/* Persistent School Header */}
       <SchoolHeader />
 
+      {/* Decorative Image - Adjusted Spacing */}
+      <div className="w-full flex justify-center -mt-6 -mb-6 z-10 animate-fade-in pointer-events-none">
+         <img 
+            src="https://i.ibb.co/5hMhj2b5/Untitled-design.png" 
+            alt="Ramadan Decoration"
+            className="h-28 md:h-44 object-contain drop-shadow-md opacity-90 transition-all duration-500 hover:scale-105"
+         />
+      </div>
+
       {/* Main Content Area */}
-      <main className="relative z-10 flex-grow flex flex-col items-center justify-center w-full max-w-4xl mx-auto">
+      <main className="relative z-10 flex-grow flex flex-col items-center justify-start md:justify-center w-full max-w-4xl mx-auto pb-10">
         {view === 'splash' && <Splash onStatusCheck={handleStatusCheck} />}
         
         {view === 'roles' && <RoleSelection day={day} onSelectRole={handleRoleSelect} />}

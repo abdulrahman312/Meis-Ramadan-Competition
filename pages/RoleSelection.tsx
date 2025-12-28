@@ -43,10 +43,7 @@ export const RoleSelection: React.FC<RoleSelectionProps> = ({ day, onSelectRole 
   return (
     <div className="w-full flex items-center justify-center p-4">
       <div className="w-full max-w-2xl animate-scale-in">
-        <div className="flex flex-col items-center mb-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-primary mb-3 font-serif tracking-wide drop-shadow-sm">
-            {t('competitionTitle')}
-          </h2>
+        <div className="flex flex-col items-center mb-6">
           <span className="bg-primary/10 text-primary-dark px-6 py-2 rounded-full text-base font-bold tracking-wider mb-4 border border-primary/10 font-arabic">
              {getHijriDate(lang)}
           </span>

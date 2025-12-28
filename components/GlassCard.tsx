@@ -10,9 +10,11 @@ export const GlassCard: React.FC<GlassCardProps> = ({ children, className = '', 
   const baseStyles = "rounded-3xl border transition-all duration-300 backdrop-blur-sm";
   
   const variants = {
-    base: "bg-white/80 border-white/60 shadow-[0_10px_40px_-10px_rgba(13,148,136,0.1)]",
-    interactive: "bg-white border-primary/10 shadow-lg shadow-primary/5 hover:border-primary/30 hover:shadow-primary/10 hover:-translate-y-1",
-    alert: "bg-white border-error/20 shadow-lg shadow-error/5"
+    // Updated to use border-primary-dark/30 (thin dark green)
+    base: "bg-white/90 border-primary-dark/30 shadow-[0_10px_40px_-10px_rgba(13,148,136,0.1)]",
+    // Updated interactive to use border-primary-dark/30 base, and darker on hover
+    interactive: "bg-white border-primary-dark/30 shadow-lg shadow-primary/5 hover:border-primary-dark hover:shadow-primary/10 hover:-translate-y-1",
+    alert: "bg-white border-error/50 shadow-lg shadow-error/5"
   };
 
   return (

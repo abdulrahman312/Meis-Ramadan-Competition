@@ -151,7 +151,8 @@ export const Quiz: React.FC<QuizProps> = ({ day, user, onComplete, onTimeout }) 
              const isSelected = selectedOption === index;
              const isOptionArabic = isArabic(option);
              
-             let optionStyle = "border-slate-200 bg-white hover:bg-slate-50 hover:border-primary/50 text-text-main shadow-sm";
+             // Updated default border from border-slate-200 to border-primary-dark/20
+             let optionStyle = "border-primary-dark/20 bg-white hover:bg-slate-50 hover:border-primary/50 text-text-main shadow-sm";
              
              if (isSelected) {
                  optionStyle = "border-primary bg-secondary/30 text-primary-dark shadow-md ring-1 ring-primary";

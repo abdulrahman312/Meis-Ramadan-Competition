@@ -36,6 +36,15 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
     }
   };
 
+  const getTitle = () => {
+    switch (role) {
+      case UserRole.STUDENT: return t('verifyStudent');
+      case UserRole.PARENT: return t('verifyParent');
+      case UserRole.STAFF: return t('verifyStaff');
+      default: return t('verifyTitle');
+    }
+  };
+
   const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!idInput.trim()) return;
@@ -68,7 +77,7 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
           {t('backToRoles')}
         </button>
 
-        <h2 className="text-3xl font-bold text-primary-dark mb-2">{t('verifyTitle')}</h2>
+        <h2 className="text-3xl font-bold text-primary-dark mb-2">{getTitle()}</h2>
         <p className="text-text-muted mb-8">{getPlaceholder()}</p>
 
         <form onSubmit={handleVerify} className="space-y-6">
@@ -84,7 +93,8 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
                   setError(null);
               }}
               placeholder={role === UserRole.PARENT ? "Mobile Number" : getPlaceholder()}
-              className={`w-full bg-white border-2 ${error ? 'border-error ring-1 ring-error/20' : 'border-slate-200 focus:border-primary'} rounded-xl px-4 py-4 text-lg text-text-main placeholder-slate-300 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all shadow-sm`}
+              // Updated border from border-slate-200 to border-primary-dark/30
+              className={`w-full bg-white border-2 ${error ? 'border-error ring-1 ring-error/20' : 'border-primary-dark/30 focus:border-primary'} rounded-xl px-4 py-4 text-lg text-text-main placeholder-slate-300 focus:outline-none focus:ring-4 focus:ring-primary/10 transition-all shadow-sm`}
             />
           </div>
 
