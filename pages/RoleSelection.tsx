@@ -42,7 +42,8 @@ export const RoleSelection: React.FC<RoleSelectionProps> = ({ day, onSelectRole 
 
   return (
     <div className="w-full flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl animate-scale-in">
+      {/* Increased max-w-2xl to max-w-4xl for better spacing */}
+      <div className="w-full max-w-4xl animate-scale-in">
         <div className="flex flex-col items-center mb-6">
           <span className="bg-primary/10 text-primary-dark px-6 py-2 rounded-full text-base font-bold tracking-wider mb-4 border border-primary/10 font-arabic">
              {getHijriDate(lang)}
@@ -53,7 +54,8 @@ export const RoleSelection: React.FC<RoleSelectionProps> = ({ day, onSelectRole 
           <p className="text-text-muted text-lg">{t('selectRole')}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Increased gap-4 to gap-8 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {roles.map((role) => (
             <GlassCard 
                 key={role.id}
