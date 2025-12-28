@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://lucide.dev/moon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadan Quiz App</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#0D9488', // Teal 600
+                light: '#2DD4BF',   // Teal 400
+                dark: '#115E59',    // Teal 800
+              },
+              secondary: {
+                 DEFAULT: '#CCFBF1', // Teal 100
+                 dark: '#99F6E4'     // Teal 200
+              },
+              accent: {
+                DEFAULT: '#D4AF37', // Gold
+                light: '#FCD34D',
+              },
+              surface: '#FFFFFF',
+              text: {
+                main: '#0F172A', // Slate 900
+                muted: '#64748B', // Slate 500
+                light: '#F8FAFC'
+              },
+              success: '#10B981',
+              error: '#EF4444',
+            },
+            fontFamily: {
+              sans: ['Cairo', 'Segoe UI', 'sans-serif'], // Switched main font to Cairo for better Arabic/English harmony
+              serif: ['Playfair Display', 'serif'],
+              arabic: ['Cairo', 'sans-serif'],
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'scale-in': 'scaleIn 0.4s ease-out forwards',
+              'shake': 'shake 0.4s cubic-bezier(.36,.07,.19,.97) both',
+              'confetti': 'confetti 4s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.95)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+              },
+              confetti: {
+                 '0%': { transform: 'translateY(-10vh) rotate(0deg)', opacity: '1' },
+                 '100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #F0FDFA; /* Teal 50 */
+        color: #0F172A;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #F0FDFA; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #0D9488; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #115E59; 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "react-use": "https://esm.sh/react-use@^17.6.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
