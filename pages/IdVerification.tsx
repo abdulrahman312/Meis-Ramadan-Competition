@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { UserRole, User } from '../types';
 import { dbService } from '../services/dbService';
 import { GlassCard } from '../components/GlassCard';
@@ -9,7 +9,7 @@ import { useLanguage } from '../App';
 interface IdVerificationProps {
   role: UserRole;
   onBack: () => void;
-  onVerify: (user: User) => void;
+  onVerify: (user: User) => Promise<void> | void;
 }
 
 export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, onVerify }) => {
@@ -17,6 +17,14 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const { t, lang } = useLanguage();
+  
+  const isMounted = useRef(true);
+
+  useEffect(() => {
+    return () => {
+      isMounted.current = false;
+    };
+  }, []);
 
   const getPlaceholder = () => {
     switch (role) {
@@ -54,15 +62,23 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
 
     try {
       const user = await dbService.verifyUser(idInput, role);
+      
+      if (!isMounted.current) return;
+
       if (user) {
-        onVerify(user);
+        // Await the parent handler (for checks like submission status)
+        await onVerify(user);
       } else {
         setError(t('idNotFound'));
-        setLoading(false);
       }
     } catch (err) {
-      setError(t('connError'));
-      setLoading(false);
+      if (isMounted.current) {
+        setError(t('connError'));
+      }
+    } finally {
+      if (isMounted.current) {
+        setLoading(false);
+      }
     }
   };
 
