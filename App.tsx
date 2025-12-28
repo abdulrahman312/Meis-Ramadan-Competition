@@ -43,11 +43,15 @@ const SchoolHeader = () => {
                 <span>{lang === 'ar' ? 'English' : 'عربي'}</span>
             </button>
 
-            <img 
-                src="https://i.ibb.co/bgFrgXkW/meis.png" 
-                alt="Middle East International School Logo" 
-                className="h-20 w-auto mb-2 drop-shadow-sm hover:scale-105 transition-transform duration-300"
-            />
+            {/* Logo with Glowing Border Animation */}
+            <div className="mb-2 p-1 rounded-full border-2 animate-border-glow bg-white/20 backdrop-blur-sm shadow-lg">
+                <img 
+                    src="https://i.ibb.co/bgFrgXkW/meis.png" 
+                    alt="Middle East International School Logo" 
+                    className="h-20 w-20 object-contain rounded-full hover:scale-105 transition-transform duration-300"
+                />
+            </div>
+            
             <div className="text-center space-y-0">
                 <h1 className="text-lg md:text-xl font-bold text-primary-dark font-arabic">
                     {translations[lang].schoolNameAr}

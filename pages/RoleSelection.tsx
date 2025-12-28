@@ -47,7 +47,7 @@ export const RoleSelection: React.FC<RoleSelectionProps> = ({ day, onSelectRole 
           <span className="bg-primary/10 text-primary-dark px-6 py-2 rounded-full text-base font-bold tracking-wider mb-4 border border-primary/10 font-arabic">
              {getHijriDate(lang)}
           </span>
-          <h1 className="text-3xl md:text-5xl font-bold text-center text-primary-dark mb-2">
+          <h1 className="text-3xl md:text-5xl font-bold text-center mb-2 animate-text-glow">
             {t('quizFor')} {day}
           </h1>
           <p className="text-text-muted text-lg">{t('selectRole')}</p>

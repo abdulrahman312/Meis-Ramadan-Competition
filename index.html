@@ -49,6 +49,8 @@
               'scale-in': 'scaleIn 0.4s ease-out forwards',
               'shake': 'shake 0.4s cubic-bezier(.36,.07,.19,.97) both',
               'confetti': 'confetti 4s ease-in-out infinite',
+              'border-glow': 'border-glow 3s infinite ease-in-out',
+              'text-glow': 'text-glow 3s infinite ease-in-out',
             },
             keyframes: {
               float: {
@@ -72,6 +74,26 @@
               confetti: {
                  '0%': { transform: 'translateY(-10vh) rotate(0deg)', opacity: '1' },
                  '100%': { transform: 'translateY(100vh) rotate(720deg)', opacity: '0' }
+              },
+              'border-glow': {
+                '0%, 100%': { 
+                  borderColor: '#115E59', 
+                  boxShadow: '0 0 10px #115E59' 
+                },
+                '50%': { 
+                  borderColor: '#2DD4BF', 
+                  boxShadow: '0 0 20px #2DD4BF' 
+                }
+              },
+              'text-glow': {
+                '0%, 100%': { 
+                  color: '#115E59', 
+                  textShadow: '0 0 5px rgba(17, 94, 89, 0.2)' 
+                },
+                '50%': { 
+                  color: '#0D9488', 
+                  textShadow: '0 0 25px rgba(45, 212, 191, 0.8), 0 0 10px rgba(45, 212, 191, 0.5)' 
+                }
               }
             }
           }
