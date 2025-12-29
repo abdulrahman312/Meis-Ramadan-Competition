@@ -118,7 +118,26 @@ const AppContent: React.FC = () => {
   };
 
   const handleUserVerified = async (verifiedUser: User) => {
-    const submitted = await dbService.checkSubmission(verifiedUser.id, day);
+    // REFRESH CHECK: Fetch latest status to ensure day hasn't changed while tab was open
+    let activeDay = day;
+    try {
+        const freshDay = await dbService.getStatus();
+        if (freshDay !== 'NA') {
+            // Update state if different
+            if (freshDay !== day) {
+                setDay(freshDay);
+                activeDay = freshDay;
+            }
+        } else {
+            // If quiz is closed/NA, redirect to splash
+            setView('splash');
+            return;
+        }
+    } catch (e) {
+        console.warn("Status refresh failed, using cached day");
+    }
+
+    const submitted = await dbService.checkSubmission(verifiedUser.id, activeDay);
     if (submitted) {
         setUser(verifiedUser);
         setResultType('already-submitted');

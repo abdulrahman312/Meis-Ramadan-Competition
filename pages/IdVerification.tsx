@@ -60,9 +60,16 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
     setLoading(true);
     setError(null);
 
+    // Safety timeout: Reload if stuck for 35s
+    const safetyTimeout = setTimeout(() => {
+      window.location.reload();
+    }, 35000);
+
     try {
       const user = await dbService.verifyUser(idInput, role);
       
+      clearTimeout(safetyTimeout); // Clear timeout immediately after response
+
       if (!isMounted.current) return;
 
       if (user) {
@@ -72,6 +79,7 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
         setError(t('idNotFound'));
       }
     } catch (err) {
+      clearTimeout(safetyTimeout); // Clear timeout on error
       if (isMounted.current) {
         setError(t('connError'));
       }
@@ -122,7 +130,7 @@ export const IdVerification: React.FC<IdVerificationProps> = ({ role, onBack, on
           )}
 
           <Button type="submit" isLoading={loading} className="w-full mt-4">
-            {t('verifyBtn')}
+            {loading ? t('verifyingWait') : t('verifyBtn')}
           </Button>
         </form>
       </GlassCard>

@@ -5,7 +5,6 @@ import { GlassCard } from '../components/GlassCard';
 import { Button } from '../components/Button';
 import { Clock } from 'lucide-react';
 import { useLanguage } from '../App';
-import { getHijriDate } from '../utils/i18n';
 
 interface QuizProps {
   day: string;
@@ -110,9 +109,9 @@ export const Quiz: React.FC<QuizProps> = ({ day, user, onComplete, onTimeout }) 
       {/* Sticky Header */}
       <div className="sticky top-4 z-20">
         <GlassCard className="relative flex items-center justify-center p-4 h-24 bg-white/95 border-secondary">
-          <div className="flex flex-col items-center justify-center z-10">
-            <span className="text-3xl font-bold font-serif text-primary-dark drop-shadow-sm tracking-wide">
-              {getHijriDate(lang)}
+          <div className="flex flex-col items-center justify-center z-10 animate-fade-in">
+            <span className="text-2xl md:text-3xl font-bold font-arabic text-primary-dark drop-shadow-sm tracking-wide">
+              {t('quizFor')} {day}
             </span>
           </div>
           
