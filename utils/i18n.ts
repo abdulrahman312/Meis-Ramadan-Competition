@@ -17,7 +17,7 @@ export const translations = {
   ar: {
     loadingStatus: "جاري التحقق من الحالة...",
     noQuiz: "لا يوجد اختبار نشط",
-    checkBack: "يرجى التحقق لاحقاً من تحدي رمضان اليوم.",
+    checkBack: "سيتوفر اختبار تحدي رمضان هنا في تمام الساعة 4:00 مساءً",
     refresh: "تحديث",
     quizFor: "اختبار يوم",
     selectRole: "اختر هويتك للمتابعة",
@@ -60,12 +60,28 @@ export const translations = {
     schoolNameAr: "مدرسة الشرق الأوسط العالمية - المروج",
     schoolNameEn: "Middle East International School - AlMuruj",
     todayChallenge: "تحدي اليوم",
-    competitionTitle: "مسابقة رمضان 1447"
+    competitionTitle: "مسابقة رمضان 1447",
+    // Instructions
+    whoTitle: "من يمكنه المشاركة؟",
+    whoStudent: "الطلاب",
+    whoParent: "أولياء الأمور",
+    whoStaff: "منسوبو المدرسة",
+    howTitle: "طريقة الدخول",
+    howStudent: "الطلاب: باستخدام رقم الهوية الوطنية أو رقم الإقامة",
+    howParent: "أولياء الأمور: باستخدام رقم الجوال المسجل لدى المدرسة",
+    howStaff: "منسوبو المدرسة: باستخدام الرقم الوظيفي",
+    scheduleTitle: "جدول المسابقة",
+    scheduleStart: "تبدأ من أول يوم في شهر رمضان",
+    scheduleTime: "تفعيل الاختبار اليومي: الساعة 4:00 مساءً",
+    scheduleFormatTitle: "نظام الاختبار:",
+    scheduleFormat1: "سؤال واحد يوميًا",
+    scheduleFormat2: "مدة الإجابة: دقيقة واحدة (عند بدء المستخدم للاختبار)",
+    scheduleFormat3: "يبدأ الوقت فور الدخول إلى الاختبار"
   },
   en: {
     loadingStatus: "Checking Quiz Status...",
     noQuiz: "No Active Quiz",
-    checkBack: "Please check back later for today's Ramadan challenge.",
+    checkBack: "The Quiz for Ramadan Challenge will be available here at 4:00 PM",
     refresh: "Refresh",
     quizFor: "Quiz for",
     selectRole: "Select your role to continue",
@@ -108,6 +124,22 @@ export const translations = {
     schoolNameAr: "مدرسة الشرق الأوسط العالمية - المروج",
     schoolNameEn: "Middle East International School - AlMuruj",
     todayChallenge: "Today's Challenge",
-    competitionTitle: "2025 Ramadan Competition"
+    competitionTitle: "2025 Ramadan Competition",
+    // Instructions
+    whoTitle: "Who Can Participate?",
+    whoStudent: "Students",
+    whoParent: "Parents",
+    whoStaff: "School Staff",
+    howTitle: "How to Enter",
+    howStudent: "Students: Use your National ID or Iqama Number",
+    howParent: "Parents: Use your registered mobile number with the school",
+    howStaff: "Staff: Use your Employee ID",
+    scheduleTitle: "Competition Schedule",
+    scheduleStart: "Starts from Day 1 of Ramadan",
+    scheduleTime: "Daily Quiz Activation: 4:00 PM",
+    scheduleFormatTitle: "Quiz Format:",
+    scheduleFormat1: "1 question per day",
+    scheduleFormat2: "Time limit: 1 minute (When the quiz is started by the user)",
+    scheduleFormat3: "Quiz starts immediately once accessed"
   }
 };
