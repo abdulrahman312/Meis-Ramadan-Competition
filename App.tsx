@@ -201,6 +201,18 @@ const AppContent: React.FC = () => {
         )}
       </main>
 
+      {/* Footer */}
+      <footer className="relative z-10 w-full flex flex-col items-center justify-center py-4 pb-8 gap-3 mt-auto animate-fade-in">
+        <img 
+          src="https://i.ibb.co/hJyS62tj/Gemini-Generated-Image-kaor2tkaor2tkaor-removebg-preview.png" 
+          alt="Ramadan Lantern" 
+          className="h-20 md:h-24 object-contain drop-shadow-sm opacity-90 hover:scale-105 transition-transform duration-300"
+        />
+        <p className="text-primary-dark font-bold text-sm md:text-base tracking-wide text-center px-4 font-serif" dir="ltr">
+          MEIS Al-Muruj • Ramadan Quiz Portal • 2026
+        </p>
+      </footer>
+
       {/* Confirmation Modal Overlay */}
       {showConfirm && user && (
           <ConfirmModal 
