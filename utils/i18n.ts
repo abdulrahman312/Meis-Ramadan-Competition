@@ -61,6 +61,8 @@ export const translations = {
     schoolNameEn: "Middle East International School - AlMuruj",
     todayChallenge: "تحدي اليوم",
     competitionTitle: "مسابقة رمضان 1447",
+    instructionsBtn: "تعليمات المسابقة",
+    instructionsTitle: "تعليمات المسابقة",
     // Instructions
     whoTitle: "من يمكنه المشاركة؟",
     whoStudent: "الطلاب",
@@ -125,6 +127,8 @@ export const translations = {
     schoolNameEn: "Middle East International School - AlMuruj",
     todayChallenge: "Today's Challenge",
     competitionTitle: "2025 Ramadan Competition",
+    instructionsBtn: "Competition Instructions",
+    instructionsTitle: "Competition Instructions",
     // Instructions
     whoTitle: "Who Can Participate?",
     whoStudent: "Students",
