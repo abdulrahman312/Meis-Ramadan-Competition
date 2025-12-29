@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { User, UserRole } from './types';
 import { dbService } from './services/dbService';
-import { ParticleBackground } from './components/ParticleBackground';
+// Removed ParticleBackground import
 import { IslamicPattern, BorderFlourish } from './components/IslamicPattern';
 import { Splash } from './pages/Splash';
 import { RoleSelection } from './pages/RoleSelection';
@@ -156,7 +156,6 @@ const AppContent: React.FC = () => {
         className={`font-sans min-h-screen relative text-text-main flex flex-col ${lang === 'ar' ? 'font-arabic' : ''}`} 
         dir={lang === 'ar' ? 'rtl' : 'ltr'}
     >
-      <ParticleBackground />
       <IslamicPattern />
       <BorderFlourish position="top" />
       <BorderFlourish position="bottom" />

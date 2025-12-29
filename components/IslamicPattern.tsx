@@ -2,15 +2,43 @@ import React from 'react';
 
 export const IslamicPattern: React.FC = () => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.03]">
+    <div className="fixed inset-0 z-0 pointer-events-none">
+      {/* Subtle Gradient Overlay for Depth and Softness */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-light/5 via-transparent to-primary-light/10" />
+
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <pattern id="islamic-geo" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M20 0L40 20L20 40L0 20Z" fill="none" stroke="#0D9488" strokeWidth="1"/>
-            <circle cx="20" cy="20" r="5" fill="#0D9488" />
+          {/* Gold Gradient for the Stroke */}
+          <linearGradient id="gold-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.4" />
+            <stop offset="50%" stopColor="#FCD34D" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.4" />
+          </linearGradient>
+
+          {/* Moroccan Trellis / Quatrefoil Pattern */}
+          <pattern id="islamic-trellis" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="scale(1.2)">
+            {/* Base Fill for the shapes - very subtle teal tint */}
+            <path 
+                d="M30 0 Q 45 15 60 0 Q 45 15 60 30 Q 45 45 60 60 Q 45 45 30 60 Q 15 45 0 60 Q 15 45 0 30 Q 15 15 0 0 Q 15 15 30 0" 
+                fill="#2DD4BF" 
+                fillOpacity="0.03"
+                stroke="none"
+            />
+            
+            {/* Gold Outline */}
+            <path 
+                d="M30 0 Q 45 15 60 0 Q 45 15 60 30 Q 45 45 60 60 Q 45 45 30 60 Q 15 45 0 60 Q 15 45 0 30 Q 15 15 0 0 Q 15 15 30 0" 
+                fill="none" 
+                stroke="url(#gold-stroke)" 
+                strokeWidth="1.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
           </pattern>
         </defs>
-        <rect width="100%" height="100%" fill="url(#islamic-geo)" />
+        
+        {/* Render the pattern */}
+        <rect width="100%" height="100%" fill="url(#islamic-trellis)" />
       </svg>
     </div>
   );
