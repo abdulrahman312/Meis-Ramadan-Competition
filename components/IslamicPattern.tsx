@@ -8,20 +8,20 @@ export const IslamicPattern: React.FC = () => {
 
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          {/* Gold Gradient for the Stroke */}
+          {/* Gold Gradient for the Stroke - Made lighter/more transparent */}
           <linearGradient id="gold-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.4" />
-            <stop offset="50%" stopColor="#FCD34D" stopOpacity="0.6" />
-            <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#D4AF37" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#FCD34D" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#D4AF37" stopOpacity="0.2" />
           </linearGradient>
 
           {/* Moroccan Trellis / Quatrefoil Pattern */}
           <pattern id="islamic-trellis" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="scale(1.2)">
-            {/* Base Fill for the shapes - very subtle teal tint */}
+            {/* Base Fill for the shapes - even more subtle */}
             <path 
                 d="M30 0 Q 45 15 60 0 Q 45 15 60 30 Q 45 45 60 60 Q 45 45 30 60 Q 15 45 0 60 Q 15 45 0 30 Q 15 15 0 0 Q 15 15 30 0" 
                 fill="#2DD4BF" 
-                fillOpacity="0.03"
+                fillOpacity="0.015"
                 stroke="none"
             />
             
@@ -30,7 +30,7 @@ export const IslamicPattern: React.FC = () => {
                 d="M30 0 Q 45 15 60 0 Q 45 15 60 30 Q 45 45 60 60 Q 45 45 30 60 Q 15 45 0 60 Q 15 45 0 30 Q 15 15 0 0 Q 15 15 30 0" 
                 fill="none" 
                 stroke="url(#gold-stroke)" 
-                strokeWidth="1.2"
+                strokeWidth="1"
                 strokeLinecap="round"
                 strokeLinejoin="round"
             />
