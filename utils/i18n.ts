@@ -17,7 +17,7 @@ export const translations = {
   ar: {
     loadingStatus: "جاري التحقق من الحالة...",
     noQuiz: "لا يوجد اختبار نشط",
-    checkBack: "سيتوفر اختبار تحدي رمضان هنا في تمام الساعة 4:00 مساءً",
+    checkBack: "سيتوفر اختبار مسابقة رمضان هنا في تمام الساعة 4:00 مساءً",
     refresh: "تحديث",
     quizFor: "اختبار يوم",
     selectRole: "اختر هويتك للمتابعة",
@@ -81,7 +81,7 @@ export const translations = {
   en: {
     loadingStatus: "Checking Quiz Status...",
     noQuiz: "No Active Quiz",
-    checkBack: "The Quiz for Ramadan Challenge will be available here at 4:00 PM",
+    checkBack: "The Quiz for Ramadan Competition will be available here at 4:00 PM",
     refresh: "Refresh",
     quizFor: "Quiz for",
     selectRole: "Select your role to continue",
