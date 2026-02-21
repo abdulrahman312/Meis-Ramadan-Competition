@@ -47,7 +47,6 @@ export const Instructions: React.FC = () => {
                     <h3 className="text-xl font-bold">{t('scheduleTitle')}</h3>
                 </div>
                 <ul className="list-disc list-outside pl-6 rtl:pr-6 space-y-3 text-text-main font-medium text-lg leading-relaxed marker:text-primary">
-                    <li>{t('scheduleStart')}</li>
                     <li>{t('scheduleTime')}</li>
                     <li className="list-none pt-2">
                         <GlassCard className="bg-secondary/20 p-4 border-none shadow-inner">
